@@ -1,4 +1,4 @@
-export const ANIVABLE_TAGS = {
+export const AVAILABLE_TAGS = {
 	microservices: {
 		display: "Micro-services",
 		color: "#fff",
@@ -9,6 +9,10 @@ export const ANIVABLE_TAGS = {
 	},
 	python: {
 		display: "Python",
+		color: "#000",
+	},
+	"just-casting": {
+		display: "Just Casting",
 		color: "#000",
 	},
 } as const;

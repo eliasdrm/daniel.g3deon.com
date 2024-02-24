@@ -1,0 +1,15 @@
+---
+import type { AvailableTag } from '@/types.d';
+
+type Props = {
+    tag: AvailableTag
+}
+
+const {
+    tag
+} =  Astro.props;
+---
+
+<span>
+    {tag}
+</span>

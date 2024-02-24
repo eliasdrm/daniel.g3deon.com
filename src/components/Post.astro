@@ -1,0 +1,47 @@
+---
+import Tag from "@/components/Tag.astro"
+import { type AvailableTag } from "@/types.d"
+
+type Props = {
+    thumbnail: string;
+    tags: AvailableTag[]
+    title: string;
+    description: string;
+    createdAt: Date
+    editedAt?: Date
+}
+
+const {
+    thumbnail,
+    tags,
+
+    title,
+    description,
+
+    createdAt,
+    editedAt
+} = Astro.props;
+---
+
+<li>
+    <div>
+        <img src={thumbnail} alt={title} loading="lazy">
+    </div>
+    <div>
+        <ul>
+            {
+                tags.map( tag => {
+                    <li>
+                        <Tag tag={tag} />
+                    </li>
+                })
+            }
+        </ul>
+        <h3>{title}</h3>
+        <p>{description}</p>
+        <span>{createdAt}</span>
+        {
+            editedAt && <span>Edited on {editedAt.toLocaleDateString("en")}</span>
+        }
+    </div>
+</li>
